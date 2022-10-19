@@ -2,9 +2,9 @@ import React, { useState } from "react";
 //@ts-ignore
 import styles from "./App.module.css"
 import Title from "./Components/Title";
-// import  Burger from "./Components/Burger"
 import { BurgerClosedIcon, BurgerOpenedIcon } from "./Assets/icons";
 import Button, { ButtonTypes } from "./Components/Button";
+import { Tabslist }  from "./Components/TabsList";
 
 const App = () => {
   const [isOpened, setOpened] = useState(false)
@@ -17,6 +17,7 @@ const App = () => {
         className={styles.burgerButton}
         onClick={() => setOpened(!isOpened)}
       />
+      <Tabslist/>
     </div>
   );
 }
