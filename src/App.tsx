@@ -5,9 +5,14 @@ import Title from "./Components/Title";
 import { BurgerClosedIcon, BurgerOpenedIcon } from "./Assets/icons";
 import Button, { ButtonTypes } from "./Components/Button";
 import { Tabslist }  from "./Components/TabsList";
+import Input from "./Components/Input";
 
 const App = () => {
   const [isOpened, setOpened] = useState(false)
+  const [inputValue, setInputValue] = useState(" ");
+  const onChange = (value: string) => {
+    setInputValue(value);
+  };
   return (
     <div className ={styles.container}>
       <Title title={"Sign In"} /> 
@@ -18,6 +23,13 @@ const App = () => {
         onClick={() => setOpened(!isOpened)}
       />
       <Tabslist/>
+      <Input
+      value={inputValue}
+      onChange={onChange}
+      placeholder={"Enter your text"}
+      title={"Title"}
+      error={"Error message"}
+      />
     </div>
   );
 }
