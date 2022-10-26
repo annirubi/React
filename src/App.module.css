@@ -3,3 +3,7 @@
     width: 100vw;
     background-color: lightblue;
 }
+
+.burgerButton {
+    padding: 30px;
+}

@@ -1,0 +1,29 @@
+.container {
+display: flex;
+flex-direction: column;
+width: 543px;
+row-gap: 8px;
+}
+
+.title {
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+color: #313037;
+}
+
+.input {
+background: #FFFFFF;
+border-radius: 2px;
+height: 56px;
+border: none;
+cursor: pointer;
+}
+
+.disabled {
+background: #E8E8E8;
+}
+
+.error {
+color: #FD3419;
+}
