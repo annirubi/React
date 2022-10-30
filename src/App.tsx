@@ -6,6 +6,10 @@ import { BurgerClosedIcon, BurgerOpenedIcon } from "./Assets/icons";
 import Button, { ButtonTypes } from "./Components/Button";
 import { Tabslist }  from "./Components/TabsList";
 import Input from "./Components/Input";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
+import Success from "./Pages/Success";
+import RegistrationConfirmation from "./Pages/RegistrationConfirmation";
 
 const App = () => {
   const [isOpened, setOpened] = useState(false)
@@ -30,6 +34,7 @@ const App = () => {
       title={"Title"}
       error={"Error message"}
       />
+      <RegistrationConfirmation></RegistrationConfirmation>
     </div>
   );
 }

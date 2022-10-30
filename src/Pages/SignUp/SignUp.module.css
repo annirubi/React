@@ -1,0 +1,16 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.button {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.signUpRedirect {
+    margin-top: 24px;
+    text-align: center;
+}
