@@ -13,6 +13,7 @@ import RegistrationConfirmation from "./Pages/RegistrationConfirmation";
 import Card from "./Components/Card";
 import { CardSize } from "./Components/Card/Card";
 import CardsList from "./Components/CardsList"
+import { CardsListType } from "./Constants/@types";
 
 
 const MOCK_CARD = {
@@ -45,7 +46,7 @@ const App = () => {
   const onChange = (value: string) => {
     setInputValue(value);
   };
-  const [cardsList, setCardsList] = useState(null)
+  const [cardsList, setCardsList] = useState<CardsListType | null >(null);
 
   useEffect(() => {
     setCardsList(MOCK_CARDS_LIST);
@@ -71,7 +72,7 @@ const App = () => {
       <RegistrationConfirmation></RegistrationConfirmation>
       <Card card={MOCK_CARD} size={CardSize.Small}></Card>
       
-      <CardsList cardsList={cardsList}></CardsList>
+      <CardsList cardsList={MOCK_CARDS_LIST}></CardsList>
     </div>
   );
 } 

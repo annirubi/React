@@ -5,7 +5,7 @@ import Card, { CardSize } from "../Card/Card"
 import styles from "./CardsList.module.css"
 
 type CardsListProps = {
-     cardsList: CardsListType | null;
+     cardsList: CardsListType;
 }
 
 const CardsList: FC<CardsListProps> = ({ cardsList }) => {
@@ -31,7 +31,7 @@ const CardsList: FC<CardsListProps> = ({ cardsList }) => {
         })}
             </div>
         </div>
-    ) : null
+    ) : null;
 }
 
 export default CardsList
