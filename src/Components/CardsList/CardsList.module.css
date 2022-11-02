@@ -22,3 +22,8 @@
     max-width: 736px;
     gap: 39px 32px;
 }
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
+}

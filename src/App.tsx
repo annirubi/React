@@ -14,6 +14,9 @@ import Card from "./Components/Card";
 import { CardSize } from "./Components/Card/Card";
 import CardsList from "./Components/CardsList"
 import { CardsListType } from "./Constants/@types";
+import ThemeProvider from "./Context/Theme/ThemeProvider";
+import { Theme } from "./Constants/@types"
+import ThemeSwitcher from "./Components/ThemeSwitcher";
 
 
 const MOCK_CARD = {
@@ -52,8 +55,15 @@ const App = () => {
     setCardsList(MOCK_CARDS_LIST);
   },[])
 
+  const [theme, setTheme] = useState(Theme.Dark);
+  const onChangeTheme = (value: Theme) => {
+    setTheme(value)
+  }
+
   return (
-    <div className ={styles.container}>
+    <ThemeProvider theme={theme} onChangeTheme={onChangeTheme}>
+      <div className ={styles.container}>
+      <ThemeSwitcher></ThemeSwitcher> 
       <Title title={"Sign In"} /> 
       <Button
         title={!isOpened ? <BurgerClosedIcon /> : <BurgerOpenedIcon />}
@@ -74,6 +84,9 @@ const App = () => {
       
       <CardsList cardsList={MOCK_CARDS_LIST}></CardsList>
     </div>
+
+    </ThemeProvider>
+    
   );
 } 
 

@@ -7,3 +7,8 @@
     color: #313037;
     background-color: #f3f3f3;
 }
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
+}
