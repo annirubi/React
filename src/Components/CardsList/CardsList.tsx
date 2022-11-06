@@ -9,7 +9,7 @@ type CardsListProps = {
 }
 
 const CardsList: FC<CardsListProps> = ({ cardsList }) => {
-    return cardsList.length > 0 ?
+    return cardsList && cardsList.length > 0 ?
      (
         <div className={styles.container}>
             <div className={styles.leftSide}>
