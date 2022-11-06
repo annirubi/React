@@ -8,8 +8,8 @@ import styles from "./Success.module.css"
 const Success = () => {
     return <FormContainer title={"Success"}>
     <>
-    <div className={styles.inputContainer}>
-    <Input placeholder={"Email confirmed. Your registration is now completed"} value={""} onChange={() => {}}></Input>
+    <div className={styles.container}>
+        <div className={styles.description}>{"Email confirmed. Your registration is now completed"}</div>
     </div>
     <Button title={"Go to home"} type={ButtonTypes.Primary} onClick={() => {}} className={styles.button}></Button>
     </>
@@ -17,3 +17,4 @@ const Success = () => {
 };
 
 export default Success
+
