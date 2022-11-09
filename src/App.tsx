@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-//@ts-ignore
-import styles from "./App.module.css"
 import Title from "./Components/Title";
 import { BurgerClosedIcon, BurgerOpenedIcon } from "./Assets/icons";
 import Button, { ButtonTypes } from "./Components/Button";
@@ -17,7 +15,8 @@ import { CardsListType } from "./Constants/@types";
 import ThemeProvider from "./Context/Theme/ThemeProvider";
 import { Theme } from "./Constants/@types"
 import ThemeSwitcher from "./Components/ThemeSwitcher";
-
+import Router from "./Pages/Router"
+import ContentPage from "./Pages/ContentPage";
 
 const MOCK_CARD = {
   id: 0,
@@ -62,13 +61,13 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme} onChangeTheme={onChangeTheme}>
-      <div className ={styles.container}>
+      <div>
       <ThemeSwitcher></ThemeSwitcher> 
       <Title title={"Sign In"} /> 
       <Button
         title={!isOpened ? <BurgerClosedIcon /> : <BurgerOpenedIcon />}
         type={ButtonTypes.Primary}
-        className={styles.burgerButton}
+        
         onClick={() => setOpened(!isOpened)}
       />
       <Tabslist/>
@@ -83,6 +82,8 @@ const App = () => {
       <Card card={MOCK_CARD} size={CardSize.Small}></Card>
       
       <CardsList cardsList={MOCK_CARDS_LIST}></CardsList>
+      <Router></Router>
+      <ContentPage></ContentPage>
     </div>
 
     </ThemeProvider>

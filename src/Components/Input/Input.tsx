@@ -13,6 +13,8 @@ type InputProps = {
     disabled?: boolean,
     title?: string,
     error?: string,
+    className?: string
+    type?: string
 };
 
 const Input: FC<InputProps> = ({value, onChange, placeholder, disabled, title, error}) => {

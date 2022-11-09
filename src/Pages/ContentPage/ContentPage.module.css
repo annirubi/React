@@ -1,0 +1,86 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.details {
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding-left: 72px;
+    padding-top: 72px;
+}
+
+.home {
+    color:#313037;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;  
+}
+
+.slash {
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+color: #8D8E97;
+}
+
+.post {
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #8D8E97
+}
+
+.image {
+    margin-top: 48px;
+    width: 992px;
+    height: 518px;
+}
+
+.text {
+width: 920px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 32px;
+color: #313037
+}
+
+.iconsContainer {
+    width: 920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.likeIcon {
+    background-color: #E8E8E8;
+    padding: 17px 33px;
+    cursor: pointer;
+}
+
+.dislikeIcon {
+    background-color: #E8E8E8;
+    padding: 17px 33px;
+    cursor: pointer;
+}
+
+.rightIcons {
+    background-color: #E8E8E8;
+    display: flex;
+    gap: 10px;
+    padding: 17px 33px;
+    cursor: pointer;
+}

@@ -1,7 +1,7 @@
 .container {
     flex: 1;
     display: flex;
-    padding: 72px 100px;
+    margin: 0 auto;
     flex-direction: column;
     background-color: #f3f3f3;
     gap: 72px;

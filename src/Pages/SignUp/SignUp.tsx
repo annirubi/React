@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import Button, { ButtonTypes } from "../../Components/Button";
 import FormContainer from "../../Components/FormContainer"
 import Input from "../../Components/Input";
-//@ts-ignore
 import styles from "./SignUp.module.css"
- 
+import { NavLink } from "react-router-dom";
+import { PathNames } from "../Router/Router";
+
 const SignUp = () => {
 const [name, setName] = useState("")
 const [login, setLogin] = useState("")
@@ -20,7 +21,7 @@ const [passwordConfirm, setPasswordConfirm] = useState("")
     <Input title={"Confirm Password"} placeholder={"Confirm password"} value={passwordConfirm} onChange={(value: string) => setPasswordConfirm(value)}></Input>
     </div>
     <Button title={"Sign Up"} type={ButtonTypes.Primary} onClick={() => {}} className={styles.button}></Button>
-    <div className={styles.signUpRedirect}>{"Already have an account?"} <span>{"Sign In"}</span></div>
+    <div className={styles.signUpRedirect}>{"Already have an account?"} <NavLink to={PathNames.SignIn} className={styles.redirectButton}>{"Sign In"}</NavLink></div>
       
     </>
     </FormContainer>

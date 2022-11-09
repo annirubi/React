@@ -14,3 +14,12 @@
     margin-top: 24px;
     text-align: center;
 }
+
+.redirectButton {
+    color: #2231AA;
+    text-decoration: none;
+}
+
+.redirectButton:hover {
+    text-decoration: underline;
+}
