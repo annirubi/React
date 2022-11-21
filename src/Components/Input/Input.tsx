@@ -17,7 +17,7 @@ type InputProps = {
     type?: string
 };
 
-const Input: FC<InputProps> = ({value, onChange, placeholder, disabled, title, error}) => {
+const Input: FC<InputProps> = ({value, onChange, placeholder, disabled, title, error, className}) => {
     const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
         onChange(event.target.value);
     };
