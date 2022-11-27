@@ -3,6 +3,9 @@ import CardsList from "../../Components/CardsList";
 import { Tabslist } from "../../Components/TabsList";
 import Title from "../../Components/Title";
 import styles from "./Home.module.css";
+import SelectedPostModal from "./SelectedPostModal";
+import PostsSelectors from "../../Redux/Selectors/postsSelectors";
+import SelectedImageModal from "./SelectedImageModal/SelectedImage";
 
 const MOCK_CARD = {
     id: 0,
@@ -33,6 +36,8 @@ const Home = () => {
         <Title title={"Blog"}></Title>
         <Tabslist></Tabslist>
         <CardsList cardsList={MOCK_CARDS_LIST}></CardsList>
+        <SelectedPostModal />
+        <SelectedImageModal />
     </div>
 };
 

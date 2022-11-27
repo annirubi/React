@@ -17,6 +17,10 @@ import { Theme } from "./Constants/@types"
 import ThemeSwitcher from "./Components/ThemeSwitcher";
 import Router from "./Pages/Router"
 import ContentPage from "./Pages/ContentPage";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { store } from "./Redux/store";
+import { setTheme } from "./Redux/Reducers/themeReducer";
+import ThemeSelectors from "./Redux/Selectors/themeSelectors";
 
 const MOCK_CARD = {
   id: 0,
@@ -43,6 +47,7 @@ const MOCK_CARDS_LIST = [
 ]
 
 const App = () => {
+  const dispatch = useDispatch();
   const [isOpened, setOpened] = useState(false)
   const [inputValue, setInputValue] = useState(" ");
   const onChange = (value: string) => {
@@ -54,41 +59,27 @@ const App = () => {
     setCardsList(MOCK_CARDS_LIST);
   },[])
 
-  const [theme, setTheme] = useState(Theme.Dark);
+  // const [theme, setTheme] = useState(Theme.Dark);
+  const theme = useSelector(ThemeSelectors.getTheme);
   const onChangeTheme = (value: Theme) => {
-    setTheme(value)
+    dispatch(setTheme(value));
   }
 
   return (
     <ThemeProvider theme={theme} onChangeTheme={onChangeTheme}>
-      <div>
-      <ThemeSwitcher></ThemeSwitcher> 
-      <Title title={"Sign In"} /> 
-      <Button
-        title={!isOpened ? <BurgerClosedIcon /> : <BurgerOpenedIcon />}
-        type={ButtonTypes.Primary}
-        
-        onClick={() => setOpened(!isOpened)}
-      />
-      <Tabslist/>
-      <Input
-      value={inputValue}
-      onChange={onChange}
-      placeholder={"Enter your text"}
-      title={"Title"}
-      error={"Error message"}
-      />
-      <RegistrationConfirmation></RegistrationConfirmation>
-      <Card card={MOCK_CARD} size={CardSize.Small}></Card>
-      
-      <CardsList cardsList={MOCK_CARDS_LIST}></CardsList>
       <Router></Router>
-      <ContentPage></ContentPage>
-    </div>
 
     </ThemeProvider>
     
   );
 } 
 
-export default App;
+const AppWithStore = () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+
+export default AppWithStore;
