@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    position: relative;
+    flex: 1;
+}
+
+.burgerButton {
+    align-self: flex-start;
+    padding: 26px;
+}
+
+.headerLine {
+    width: 100%;
+    height: 84px;
+    background-color: #2231AA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.searchButton {
+    border-left: 1px solid #5360CD;
+    border-right: 1px solid #5360CD;
+    cursor: pointer;
+}
+
+.searchButtonContainer {
+    padding: 25px 34px;
+}
+
+.userIcon {
+    padding: 28px 34px;
+}
+
+.searchField {
+    width: 100%;
+    height: 100%;
+    background-color: #5360CD;
+}
+
+.buttonContainer {
+    display: flex;
+}

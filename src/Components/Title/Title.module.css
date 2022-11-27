@@ -1,9 +1,16 @@
 .container {
-    height: 80px;
-    width: 186px;
+    height: 150px;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
     font-weight: 700;
     font-size: 56px;
     line-height: 80px;
     color: #313037;
-    background-color:  #E5E5E5;
+    /* background-color: #f3f3f3; */
+}
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
 }

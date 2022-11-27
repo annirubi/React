@@ -28,3 +28,8 @@ line-height: 24px;
 .disabled {
     color: #8D8E97;
 }
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
+}

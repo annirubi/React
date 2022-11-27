@@ -1,0 +1,29 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.forgotPassword {
+    margin-top: 16px;
+}
+
+.button {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.signUpRedirect {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.redirectButton {
+    color: #2231AA;
+    text-decoration: none;
+}
+
+.redirectButton:hover {
+    text-decoration: underline;
+}

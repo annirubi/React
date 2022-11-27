@@ -2,6 +2,8 @@ import React, { useState }from "react";
 //@ts-ignore
 import styles from "./Tabslist.module.css";
 import classNames from "classnames";
+import { useThemeContext } from "../../Context/Theme";
+import { Theme } from "../../Constants/@types";
 
 
 enum Tabs {
@@ -19,8 +21,9 @@ export const Tabslist = () => {
     const onTabClick = (tab: Tabs) => {
         setActiveTab(tab)
     }
+    const { theme } = useThemeContext();
     return (
-      <div className ={styles.container}>
+      <div className={classNames(styles.container, { [styles.darkContainer]: theme === Theme.Dark})}>
           {TABS_NAMES.map((tab) => {
               return <div key={tab.key} onClick={() => onTabClick(tab.key)} 
               className={classNames([ styles.tab, { [styles.activeTab]: tab.key === activeTab }])}>{tab.name}</div>

@@ -27,3 +27,8 @@ background: #E8E8E8;
 .error {
 color: #FD3419;
 }
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
+}

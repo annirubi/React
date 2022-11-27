@@ -1,0 +1,35 @@
+.container {
+    flex: 1;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    gap: 72px;
+}
+
+.goBackButton {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #313037;
+    margin-top: 72px;
+}
+
+.formContainer {
+    border: 1px solid #8d8e97;
+    padding: 48px;
+    align-self: center;
+    max-width: 624px;
+}
+
+.darkContainer {
+    background-color: #313037;
+    color: white;
+}
+
+.darkContainer .goBackButton {
+    color: white;
+}
+
+
+
