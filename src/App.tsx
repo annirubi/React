@@ -59,7 +59,6 @@ const App = () => {
     setCardsList(MOCK_CARDS_LIST);
   },[])
 
-  // const [theme, setTheme] = useState(Theme.Dark);
   const theme = useSelector(ThemeSelectors.getTheme);
   const onChangeTheme = (value: Theme) => {
     dispatch(setTheme(value));
