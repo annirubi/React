@@ -8,19 +8,19 @@ import { setSelectedImageModalVisible } from "../../../Redux/Reducers/imageReduc
 import Modal from "../../../Components/Modal";
 
 const SelectedImageModal = () => {
-  const SelectedImage = useSelector(ImageSelectors.getSelectedImage);
+  const selectedImage = useSelector(ImageSelectors.getSelectedImage);
   const isVisible = useSelector(ImageSelectors.getSelectedImageModalVisible);
 
   const dispatch = useDispatch();
 
-  const OnClose = () => {
+  const onClose = () => {
     dispatch(setSelectedImageModalVisible(false));
   };
   return (
     <>
-      {SelectedImage && (
-        <Modal isOpen={isVisible} onRequestClose={OnClose}>
-          <img src={SelectedImage} alt={""} className={styles.image} />
+      {selectedImage && (
+        <Modal isOpen={isVisible} onRequestClose={onClose}>
+          <img src={selectedImage} alt={""} className={styles.image} />
         </Modal>
       )}
     </>
