@@ -1,0 +1,9 @@
+
+.crossIcon {
+    cursor: pointer;
+    position: absolute;
+    left: 95%;
+    right: 3%;
+    top: 3%;
+    bottom: 94%;
+}
