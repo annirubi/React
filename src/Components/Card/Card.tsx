@@ -11,6 +11,7 @@ import {
 } from "../../Redux/Reducers/postsReducer";
 import PostsSelectors from "../../Redux/Selectors/postsSelectors";
 import { setSelectedImage } from "../../Redux/Reducers/imageReducer";
+import { useNavigate } from "react-router";
 
 export enum CardSize {
   Large = "large",
@@ -25,7 +26,7 @@ type CardProps = {
 };
 
 const Card: FC<CardProps> = ({ card, size, isFromModal }) => {
-  const { title, text, image, date } = card;
+  const { title, text, image, date, id } = card;
   const dispatch = useDispatch();
   const likedPosts = useSelector(PostsSelectors.getLikedPosts);
   const dislikedPosts = useSelector(PostsSelectors.getDislikedPosts);
@@ -38,10 +39,15 @@ const Card: FC<CardProps> = ({ card, size, isFromModal }) => {
   const isMedium = size === CardSize.Medium;
   const isSamll = size === CardSize.Small;
 
+  const navigate = useNavigate();
+  const onSinglePostClick = () => {
+    navigate(`/content/${id}`);
+  };
+
   const onSettingClick = () => {
     dispatch(setSelectedPost(card));
   };
-  
+
   const onImageClick = () => {
     dispatch(setSelectedImage(image));
   };
@@ -75,6 +81,7 @@ const Card: FC<CardProps> = ({ card, size, isFromModal }) => {
                 [styles.mediumTitle]: isMedium,
                 [styles.smallTitle]: isSamll,
               })}
+              onClick={onSinglePostClick}
             >
               {title}
             </div>

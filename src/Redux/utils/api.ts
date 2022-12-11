@@ -15,8 +15,13 @@ const activateUser = (data: ActivateUserData) => {
     return API.post("/auth/users/activation/", data)
 }
 
+const getSinglePost = (id: string) => {
+    return API.get(`/blog/posts/${id}/`);
+  };
+
 export default {
   registerUser,
   getAllPosts,
   activateUser,
+  getSinglePost
 };
