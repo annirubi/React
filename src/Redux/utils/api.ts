@@ -1,5 +1,5 @@
 import { create } from "apisauce";
-import { RegisterUserData } from "../Types/auth";
+import { ActivateUserData, RegisterUserData } from "../Types/auth";
 
 const API = create({ baseURL: "https://studapi.teachmeskills.by" });
 
@@ -11,7 +11,12 @@ const getAllPosts = () => {
   return API.get("/blog/posts/?limit=11");
 };
 
+const activateUser = (data: ActivateUserData) => {
+    return API.post("/auth/users/activation/", data)
+}
+
 export default {
   registerUser,
   getAllPosts,
+  activateUser,
 };

@@ -5,6 +5,7 @@ import SignIn from "../SignIn";
 import SignUp from "../SignUp";
 import ContentPage from "../ContentPage";
 import RegistrationConfirmation from "../RegistrationConfirmation";
+import Success from "../Success";
 
 export enum PathNames {
     Home = "/",
@@ -14,6 +15,8 @@ export enum PathNames {
     RegistrationConfirmation = "/sign-up/confirm",
     RegistrationSuccess = "/sign-up/success",
     Search = "/search",
+    ContentPage = "/content/:id",
+    ActivateUser = "/activate/:uid/:token",
 }
 
 const Router = () => {
@@ -26,6 +29,7 @@ const Router = () => {
             <Route path={PathNames.SignUp} element={<SignUp/>}></Route>
             <Route path={PathNames.AddPost} element={null}></Route>
             <Route path={PathNames.RegistrationConfirmation} element={<RegistrationConfirmation/>}></Route>
+            <Route path={PathNames.ActivateUser} element={<Success/>}></Route>
             </Route>
             
             <Route path="*" element={<Navigate to={PathNames.SignIn}/>}></Route>
