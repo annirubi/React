@@ -4,6 +4,7 @@ import PagesWrapper from "../PagesWrapper";
 import SignIn from "../SignIn";
 import SignUp from "../SignUp";
 import ContentPage from "../ContentPage";
+import RegistrationConfirmation from "../RegistrationConfirmation";
 
 export enum PathNames {
     Home = "/",
@@ -24,6 +25,7 @@ const Router = () => {
             <Route path={PathNames.SignIn} element={<SignIn/>}></Route>
             <Route path={PathNames.SignUp} element={<SignUp/>}></Route>
             <Route path={PathNames.AddPost} element={null}></Route>
+            <Route path={PathNames.RegistrationConfirmation} element={<RegistrationConfirmation/>}></Route>
             </Route>
             
             <Route path="*" element={<Navigate to={PathNames.SignIn}/>}></Route>
