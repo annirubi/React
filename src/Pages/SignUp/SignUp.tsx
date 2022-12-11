@@ -3,14 +3,27 @@ import Button, { ButtonTypes } from "../../Components/Button";
 import FormContainer from "../../Components/FormContainer"
 import Input from "../../Components/Input";
 import styles from "./SignUp.module.css"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { PathNames } from "../Router/Router";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../Redux/Reducers/authReducer";
 
 const SignUp = () => {
 const [name, setName] = useState("")
 const [login, setLogin] = useState("")
 const [password, setPassword] = useState("")
 const [passwordConfirm, setPasswordConfirm] = useState("")
+
+const dispatch = useDispatch();
+const navigate = useNavigate();
+const onSignUp = () => {
+    dispatch(registerUser({data: { username: name, password, email: login }, callback: () => navigate(PathNames.RegistrationConfirmation, {
+        state: { email: login },
+      })
+    })
+    )
+
+}
 
     return <FormContainer title={"Sign Up"}>
     <>
@@ -20,7 +33,7 @@ const [passwordConfirm, setPasswordConfirm] = useState("")
     <Input title={"Password"} placeholder={"Your password"} value={password} onChange={(value: string) => setPassword(value)}></Input>
     <Input title={"Confirm Password"} placeholder={"Confirm password"} value={passwordConfirm} onChange={(value: string) => setPasswordConfirm(value)}></Input>
     </div>
-    <Button title={"Sign Up"} type={ButtonTypes.Primary} onClick={() => {}} className={styles.button}></Button>
+    <Button title={"Sign Up"} type={ButtonTypes.Primary} onClick={onSignUp} className={styles.button}></Button>
     <div className={styles.signUpRedirect}>{"Already have an account?"} <NavLink to={PathNames.SignIn} className={styles.redirectButton}>{"Sign In"}</NavLink></div>
       
     </>
